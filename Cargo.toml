@@ -1,0 +1,9 @@
+[package]
+name = "epub_t2s"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+opencc-rust = { version = "1.1.19", features = ["static-dictionaries"] }
+zip = "2.2.0"

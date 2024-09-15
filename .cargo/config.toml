@@ -1,0 +1,5 @@
+[alias]
+build_mingw = "build --config .cargo/mingw_config.toml --target x86_64-pc-windows-gnu"
+build_glibc = "build --config .cargo/glibc_config.toml --target x86_64-unknown-linux-gnu"
+build_mingw_release = "build --config .cargo/mingw_config.toml --target x86_64-pc-windows-gnu --release"
+build_glibc_release = "build --config .cargo/glibc_config.toml --target x86_64-unknown-linux-gnu --release"

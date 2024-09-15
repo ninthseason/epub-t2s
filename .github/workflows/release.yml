@@ -1,0 +1,21 @@
+name: Releases
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+    - run: sudo apt-get install -y mingw-w64
+    - run: cargo build_mingw
+    - run: cargo build_glibc
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "target/x86_64-pc-windows-gnu/release/epub_t2s.exe,target/x86_64-unknown-linux-gnu/release/epub_t2s"

@@ -1,9 +1,6 @@
 name: Releases
 
 on:
-  push:
-    tags:
-    - '*'
   workflow_dispatch:
 
 jobs:
@@ -15,10 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: sudo apt-get install -y mingw-w64
+    - run: cargo update
     - run: rustup target add x86_64-pc-windows-gnu
     - run: rustup target add x86_64-unknown-linux-gnu
-    - run: cp $(gcc --print-file-name=libstdc++.a) ./OpenCC/build/lib/glibc/
-    - run: cp $(x86_64-w64-mingw32-gcc-win32 --print-file-name=libstdc++.a) ./OpenCC/build/lib/mingw/
+    # - run: cp $(gcc --print-file-name=libstdc++.a) ./OpenCC/build/lib/glibc/
+    # - run: cp $(x86_64-w64-mingw32-gcc-win32 --print-file-name=libstdc++.a) ./OpenCC/build/lib/mingw/
     - run: cargo build_glibc
     - run: cargo build_mingw
     - uses: ncipollo/release-action@v1

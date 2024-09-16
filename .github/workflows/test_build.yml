@@ -1,5 +1,4 @@
-name: Releases
-
+name: Test build
 on:
   workflow_dispatch:
 

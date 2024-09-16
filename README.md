@@ -19,7 +19,7 @@
 
 ### On Windows
 
-需要安装有 MinGW 环境，Rust 工具链设置为 x86_64-pc-windows-gnu
+需要安装有 MinGW(GCC>=8) 环境，Rust 工具链设置为 x86_64-pc-windows-gnu
 
 ```bash
 cargo build_mingw
@@ -31,6 +31,8 @@ cargo build_mingw
 
 ### On Linux
 
+需要 GCC 版本 >=11
+
 ```bash
 cargo build_glibc
 
@@ -41,7 +43,7 @@ cargo build_glibc
 
 目前只知道从 Linux 向 Windows 编译的方法。
 
-需于 Linux 上安装 MinGW 环境
+需于 Linux 上安装 MinGW(GCC>=8) 环境
 
 ```bash
 cargo build_mingw

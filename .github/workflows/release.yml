@@ -12,12 +12,13 @@ jobs:
       - uses: actions/checkout@v3
       - run: sudo apt update && sudo apt upgrade -y
       - run: sudo apt-get install -y mingw-w64
+      - run: gcc --version
       - run: rustup target add x86_64-pc-windows-gnu
       - run: rustup target add x86_64-unknown-linux-gnu
       # - run: cp $(gcc --print-file-name=libstdc++.a) ./OpenCC/build/lib/glibc/
       # - run: cp $(x86_64-w64-mingw32-gcc-win32 --print-file-name=libstdc++.a) ./OpenCC/build/lib/mingw/
-      - run: cargo build_glibc
       - run: cargo build_mingw
+      - run: cargo build_glibc
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "target/x86_64-pc-windows-gnu/release/epub_t2s.exe,target/x86_64-unknown-linux-gnu/release/epub_t2s"

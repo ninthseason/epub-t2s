@@ -1,5 +1,5 @@
 [env]
-OPENCC_INCLUDE_DIRS = { value = "OpenCC/build/include/opencc", relative = true }
+OPENCC_INCLUDE_DIRS = { value = "", relative = true }
 OPENCC_LIB_DIRS = { value = "OpenCC/build/lib/mingw", relative = true }
 OPENCC_LIBS = "opencc:marisa"
 OPENCC_STATIC = "1"

@@ -16,8 +16,9 @@ jobs:
       - run: gcc --version
       - run: rustup target add x86_64-pc-windows-gnu
       - run: rustup target add x86_64-unknown-linux-gnu
-      - run: cargo build_mingw
-      - run: cargo build_glibc
+      - run: cargo build_mingw_release
+      - run: cargo build_glibc_release
+      - run: ls
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "./target/x86_64-pc-windows-gnu/release/epub_t2s.exe,./target/x86_64-unknown-linux-gnu/release/epub_t2s"
+          artifacts: "target/x86_64-pc-windows-gnu/release/epub_t2s.exe,target/x86_64-unknown-linux-gnu/release/epub_t2s"
